@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Economica:wght@700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Merriweather&family=Montserrat:wght@100;400;900&family=Open+Sans:ital,wght@0,300;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Notes</title>
+</head>
+
+<body onload="render()">
+
+    <nav class="navbar">
+        <div class="logo">
+            <div class="menu-wrapper">
+                <img src="img/menu.png" alt="">
+            </div>
+            <h2><a href="index.html">Notes</a></h2>
+        </div>
+        <div class="input-wrapper">
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="links">
+            <a href="#"><img src="img/refresh.png" alt=""> </a>
+            <a href="#"> <img src="img/pause.png" alt=""> </a>
+            <a href="#"><img src="img/gear.png" alt=""></a>
+        </div>
+    </nav>
+    <!-- Input -->
+    <section class="todo-section" id="todo-input-section">
+        <div class="inputbox-container">
+            <div class="button-wrapper">
+                <button class="take-note" onclick="showTodoInputs()" id="input-button">Take a note...</button>
+            </div>
+            <div class="input-todo" id="input-wrapper">
+                <button onclick="closeTodoInputBox()" class="close-btn"><img src="img/close.png" alt=""></button>
+                <input type="text" placeholder="Title" class="title" id="title">
+                <input type="text" placeholder="Take a Note..." class="task" id="task">
+                <button onclick="addToOutputSection()" class="add-btn">Add</button>
+            </div>
+        </div>
+        <div class="recyle-bin">
+            <button class="deleted-items-btn" onclick="getDeletedItems()">
+                <img src="img/001-recycling-bin.png" alt="" class="tb-empty">
+            </button>
+        </div>
+    </section>
+<!-- Todo Output -->
+    <section class="output-section">
+        <div class="output-container" id="output-sec"></div>
+    </section>
+<!-- deleted Todos -->
+    <section id="deleted-todos">
+        <div class="modal-container" id="modal">
+            <div class="modal-content" id="modal-content">
+                <div class="each-modal-item" id="each-item-wrapper">
+                    <!-- <div class="output-value-wrapper">
+                        <button onclick="deleteTodo()"><img src="img/bin.png" alt=""></button>
+                        <h3>nm,</h3>
+                        <p>kj</p>
+                    </div> -->
+                </div>
+                <div class="btns">
+                    <button type="button" class="cancel-btn" onclick="hideDeleteItems()">Cancel</button>
+                    <button type="button" class="delete-btn" onclick="deleteAllItems()">Delete All</button>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- footer -->
+    <footer class="footer">
+        <div class="footer-div"> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from
+            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
